@@ -2,34 +2,17 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"runtime"
 	"time"
 )
 
 func LlenarArrayOrdenado(a *[100]int) {
 
-	//c := 207
-
 	for i := 0; i < 100; i++ {
 
 		a[i] = i + 1
-		//c += 7
 
 	}
-}
-
-func LlenarArrayDesordenado2(n int) []int {
-
-	a := make([]int, n, n)
-	rand.Seed(time.Now().UnixNano())
-
-	for i := 0; i < n; i++ {
-
-		a[i] = rand.Intn(999) - rand.Intn(999)
-	}
-
-	return a
 }
 
 func MedirTiempo(start time.Time, algoritmo string) {
