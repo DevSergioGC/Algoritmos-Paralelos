@@ -128,7 +128,7 @@ func main() {
 		defer MedirTiempo(time.Now(), "Busqueda Binaria")
 
 		ini := 0
-		fin := 100 - 1
+		fin := len(a) - 1
 		var mitad, dato int
 
 		dato = 58 //Dato a Buscar
@@ -161,6 +161,16 @@ func main() {
 
 		var a = []int{15, 3, 8, 6, 18, 1, 20, 10, 37, 150}
 		var n int = len(a)
+		defer MedirTiempo(time.Now(), "QuickSort")
+
+		b := quicksort(a, 0, n-1)
+		fmt.Println(b)
+	}()
+
+	go func() {
+
+		var a = []int{15, 3, 8, 6, 18, 1, 20, 10, 37, 150}
+		var n int = len(a)
 		defer MedirTiempo(time.Now(), "Ordenamiento de Burbuja")
 		var e, i, auxiliar int
 
@@ -179,17 +189,6 @@ func main() {
 		}
 
 		fmt.Println(a)
-	}()
-
-	go func() {
-
-		var a = []int{15, 3, 8, 6, 18, 1, 20, 10, 37, 150}
-		var n int = len(a)
-		defer MedirTiempo(time.Now(), "QuickSort")
-
-		b := quicksort(a, 0, n-1)
-		fmt.Println(b)
-
 	}()
 
 	go func() {
